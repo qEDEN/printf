@@ -1,7 +1,6 @@
 #include "main.h"
-#include <stdio.h>
-#include <stdarg.h>
 #include <unistd.h>
+#include <stdio.h>
 
 /**
  * _printf - Produces output according to a format.
@@ -21,19 +20,6 @@ int _printf(const char *format, ...)
 	va_end(args);
 
 	return (count);
-}
-
-/**
- * print_custom - Handle custom format specifier %r.
- * @args: Variable arguments.
- * Return: The number of characters printed or -1 on error.
- */
-int print_custom(va_list args)
-{
-	char *message = "%r";
-
-	write(1, message, strlen(message));
-	return (strlen(message));
 }
 
 /**
@@ -60,8 +46,6 @@ int print_formatted_output(const char *format, va_list args)
 				count += print_char(va_arg(args, int));
 			else if (*format == 's')
 				count += print_string(va_arg(args, char *));
-			else if (*format == 'r')
-				count += print_custom(args);
 			else if (*format == '%')
 			{
 				write(1, "%", 1);
@@ -80,3 +64,35 @@ int print_formatted_output(const char *format, va_list args)
 	return (count);
 }
 
+/**
+ * print_char - Print a character and return the number of characters printed.
+ * @c: Character to be printed.
+ * Return: The number of characters printed (always 1).
+ */
+int print_char(int c)
+{
+	write(1, &c, 1);
+	return (1);
+}
+
+/**
+ * print_string - Print a string and return the number of characters printed.
+ * @str: String to be printed.
+ * Return: The number of characters printed or -1 on error.
+ */
+int print_string(char *str)
+{
+	int count = 0;
+
+	if (str == NULL)
+		str = "(null)";
+
+	while (*str)
+	{
+		write(1, str, 1);
+		str++;
+		count++;
+	}
+
+	return (count);
+}
