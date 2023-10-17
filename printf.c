@@ -19,7 +19,7 @@ int _printf(const char *format, ...)
 	count = print_formatted_output(format, args);
 	va_end(args);
 
-	return (count - 1);
+	return (count);
 }
 
 /**
