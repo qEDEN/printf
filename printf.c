@@ -1,6 +1,7 @@
 #include "main.h"
 #include <unistd.h>
 #include <stdarg.h>
+#include <stdio.h>
 
 /**
  * print_formatted_output - Helper function to print formatted output.
