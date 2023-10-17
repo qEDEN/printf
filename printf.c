@@ -52,7 +52,11 @@ int print_formatted_output(const char *format, va_list args)
 				count++;
 			}
 			else
-				return (-1);
+			{
+				write(1, "%", 1);
+				write(1, format, 1);
+				count += 2;
+			}
 		}
 		format++;
 	}
