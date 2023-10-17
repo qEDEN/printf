@@ -1,16 +1,19 @@
 #include "main.h"
 #include <unistd.h>
-#include <stdarg.h>
+#include <stdio.h>
 
 /**
  * _printf - Produces output according to a format.
  * @format: Format string.
- * Return: The number of characters printed.
+ * Return: The number of characters printed or -1 on error.
  */
 int _printf(const char *format, ...)
 {
 	va_list args;
 	int count = 0;
+
+	if (format == NULL)
+		return (-1);
 
 	va_start(args, format);
 	count = print_formatted_output(format, args);
@@ -23,7 +26,7 @@ int _printf(const char *format, ...)
  * print_formatted_output - Helper function to print formatted output.
  * @format: Format string.
  * @args: Variable arguments.
- * Return: The number of characters printed.
+ * Return: The number of characters printed or -1 on error.
  */
 int print_formatted_output(const char *format, va_list args)
 {
@@ -48,6 +51,8 @@ int print_formatted_output(const char *format, va_list args)
 				write(1, "%", 1);
 				count++;
 			}
+			else
+				return (-1);
 		}
 		format++;
 	}
@@ -58,7 +63,7 @@ int print_formatted_output(const char *format, va_list args)
 /**
  * print_char - Print a character and return the number of characters printed.
  * @c: Character to be printed.
- * Return: The number of characters printed.
+ * Return: The number of characters printed (always 1).
  */
 int print_char(int c)
 {
@@ -69,7 +74,7 @@ int print_char(int c)
 /**
  * print_string - Print a string and return the number of characters printed.
  * @str: String to be printed.
- * Return: The number of characters printed.
+ * Return: The number of characters printed or -1 on error.
  */
 int print_string(char *str)
 {
