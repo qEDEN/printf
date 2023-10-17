@@ -1,17 +1,16 @@
+#include <unistd.h>
 #include "main.h"
 
 /**
- * print_int - Print an integer and return the number of characters printed.
- * @args: A va_list containing the integer to be printed.
+ * print_integer - Print an integer.
+ * @n: Integer to be printed.
  *
  * Return: The number of characters printed.
  */
-int print_int(va_list args)
+int print_integer(int n)
 {
-	int n = va_arg(args, int);
-	int count = 0;
 	char buffer[12];
-	int i = 0;
+	int count = 0;
 
 	if (n < 0)
 	{
@@ -20,14 +19,18 @@ int print_int(va_list args)
 		count++;
 	}
 
-	do  {
-		buffer[i++] = (n % 10) + '0';
+	int i = 0;
+
+	do {
+		buffer[i] = '0' + (n % 10);
 		n /= 10;
-	} while (n);
+		i++;
+	} while (n > 0);
 
 	while (i > 0)
 	{
-		write(1, &buffer[--i], 1);
+		write(1, &buffer[i - 1], 1);
+		i--;
 		count++;
 	}
 
