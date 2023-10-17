@@ -96,3 +96,11 @@ int print_string(char *str)
 
 	return (count);
 }
+/**
+ * main - Entry point of the program.
+ * Return: Always returns 0.
+ */
+int main(void)
+{
+	return (0);
+}
