@@ -2,11 +2,11 @@
 #include <unistd.h>
 
 /**
- * _printf - Produces output according to a format
+ * main - Produces output according to a format
  * @format: Format string
  * Return: The number of characters printed
  */
-int _printf(const char *format, ...)
+int main(const char *format, ...)
 {
 	va_list args;
 	int count = 0;
