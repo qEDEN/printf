@@ -10,6 +10,8 @@ int print_int(va_list args)
 {
 	int n = va_arg(args, int);
 	int count = 0;
+	char buffer[12];
+	int i = 0;
 
 	if (n < 0)
 	{
@@ -18,10 +20,7 @@ int print_int(va_list args)
 		count++;
 	}
 
-	char buffer[12];
-	int i = 0;
-
-	do {
+	do  {
 		buffer[i++] = (n % 10) + '0';
 		n /= 10;
 	} while (n);
