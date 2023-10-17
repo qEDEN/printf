@@ -80,17 +80,3 @@ int print_formatted_output(const char *format, va_list args)
 	return (count);
 }
 
-/**
- * main - Entry point of the program.
- *
- * This function serves as the entry point for the program. It calls the custom
- * _printf function to demonstrate its functionality.
- *
- * Return: Always 0 to indicate successful execution.
- */
-
-int main(void)
-{
-	_printf("%r\n");
-	return (0);
-}
