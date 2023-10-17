@@ -2,11 +2,11 @@
 #include <unistd.h>
 
 /**
- * main - Produces output according to a format
- * @format: Format string
- * Return: The number of characters printed
+ * _printf - Produces output according to a format.
+ * @format: Format string.
+ * Return: The number of characters printed.
  */
-int main(const char *format, ...)
+int _printf(const char *format, ...)
 {
 	va_list args;
 	int count = 0;
@@ -19,10 +19,10 @@ int main(const char *format, ...)
 }
 
 /**
- * print_formatted_output - Helper function to print formatted output
- * @format: Format string
- * @args: Variable arguments
- * Return: The number of characters printed
+ * print_formatted_output - Helper function to print formatted output.
+ * @format: Format string.
+ * @args: Variable arguments.
+ * Return: The number of characters printed.
  */
 int print_formatted_output(const char *format, va_list args)
 {
@@ -55,9 +55,9 @@ int print_formatted_output(const char *format, va_list args)
 }
 
 /**
- * print_char - Print a character and return the number of characters printed
- * @c: Character to be printed
- * Return: The number of characters printed
+ * print_char - Print a character and return the number of characters printed.
+ * @c: Character to be printed.
+ * Return: The number of characters printed.
  */
 int print_char(int c)
 {
@@ -66,9 +66,9 @@ int print_char(int c)
 }
 
 /**
- * print_string - Print a string and return the number of characters printed
- * @str: String to be printed
- * Return: The number of characters printed
+ * print_string - Print a string and return the number of characters printed.
+ * @str: String to be printed.
+ * Return: The number of characters printed.
  */
 int print_string(char *str)
 {
