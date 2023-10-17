@@ -1,5 +1,6 @@
 #include "main.h"
 #include <unistd.h>
+#include <stdarg.h>  // Include the necessary header for va_list
 
 /**
  * _printf - produces output according to a format
