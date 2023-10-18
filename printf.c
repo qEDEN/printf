@@ -71,6 +71,10 @@ int _putchar(char c)
  */
 int _puts(char *str)
 {
+	int count = 0;
+
+	if (str == NULL)
+		str = "(null)";
 	int printed_chars = 0;
 
 	while (*str)
