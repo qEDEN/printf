@@ -53,6 +53,17 @@ int _printf(const char *format, ...)
 }
 
 /**
+ * _putchar - Write a character to standard output
+ * @c: The character to print
+ *
+ * Return: The number of characters printed (always 1)
+ */
+int _putchar(char c)
+{
+	return (write(1, &c, 1));
+}
+
+/**
  * _puts - Write a string to standard output
  * @str: The string to print
  *
