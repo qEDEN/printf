@@ -75,12 +75,12 @@ int _puts(char *str)
 
 	if (str == NULL)
 		str = "(null)";
-	int printed_chars = 0;
 
 	while (*str)
 	{
-		printed_chars += _putchar(*str);
+		write(1, str, 1);
 		str++;
-	}
-	return (printed_chars);
+		count++;
+}
+	return (count);
 }
