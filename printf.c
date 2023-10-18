@@ -6,7 +6,7 @@
  * _printf - Custom printf function
  * @format: The format string
  *
- * Return: Number of characters printed (excluding null byte)
+ * Return: The number of characters printed (excluding the null byte)
  */
 int _printf(const char *format, ...)
 {
@@ -56,7 +56,7 @@ int _printf(const char *format, ...)
  * _putchar - Write a character to standard output
  * @c: The character to print
  *
- * Return: Number of characters printed (always 1)
+ * Return: The number of characters printed (always 1)
  */
 int _putchar(char c)
 {
@@ -67,7 +67,7 @@ int _putchar(char c)
  * _puts - Write a string to standard output
  * @str: The string to print
  *
- * Return: Number of characters printed
+ * Return: The number of characters printed
  */
 int _puts(char *str)
 {
